@@ -1,0 +1,64 @@
+<div class="main-row" *ngIf="forecasts">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col temp-text txt-style">{{ forecasts.current.temp }}&#176;</div>
+      <div class="col">
+        <div class="row">
+          <div class="col city-text txt-style">{{ forecasts.location.name }}</div>
+        </div>
+        <div class="row">
+          <div class="col date-text txt-style">{{ forecasts.date }}</div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <img class="img-size" src="{{ forecasts.current.condition.icon}}" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col des-text txt-style">{{forecasts.current.condition.text}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lower-pos" *ngIf="forecasts">
+  <div class="container">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col lower-val txt-style">{{ forecasts.current.humidity }}%</div>
+            </div>
+            <div class="row align-items-end">
+              <div class="col sub-heading txt-style">Humidity</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="col lower-val txt-style">{{ forecasts.current.precipitation }}mm</div>
+            </div>
+            <div class="row align-items-end">
+              <div class="col sub-heading txt-style">Precipitation</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="col lower-val txt-style">{{forecasts.risk}}{{ forecasts.current.uv }}</div>
+            </div>
+            <div class="row align-items-end">
+              <div class="col sub-heading txt-style">UV Index</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+</div>
+
+
